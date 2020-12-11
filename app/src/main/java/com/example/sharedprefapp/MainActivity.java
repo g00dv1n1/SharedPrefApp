@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences myNoteSharedPref;
 
     private static String NOTE_TEXT = "note_text";
+    private static String sharedPrefName = "MyNote";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         mInputNote = findViewById(R.id.inputNote);
         mBtnSaveNote = findViewById(R.id.btnSaveNote);
 
-        myNoteSharedPref = getSharedPreferences("MyNote", MODE_PRIVATE);
+        myNoteSharedPref = getSharedPreferences(sharedPrefName, MODE_PRIVATE);
 
         mBtnSaveNote.setOnClickListener(new View.OnClickListener() {
             @Override
